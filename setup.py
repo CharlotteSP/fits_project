@@ -2,16 +2,10 @@ from setuptools import setup, find_packages
 
 setup(
 
-    name="fits_project",
+    name="fits_project_v2",
 
     version="1.0",
 
     packages=find_packages()
 
 )
-
-entry_points={
-    "console_scripts": [
-        "cmdfits = cmdfits.cli:main",
-    ]
-}
