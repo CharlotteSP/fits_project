@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+fits_project/__init__.py
+fits_project/cmdfits.py
+fits_project/fits_package.py
+fits_project_v2.egg-info/PKG-INFO
+fits_project_v2.egg-info/SOURCES.txt
+fits_project_v2.egg-info/dependency_links.txt
+fits_project_v2.egg-info/top_level.txt
