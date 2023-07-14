@@ -8,8 +8,14 @@ from astropy.io import fits
 from tabulate import tabulate
 
 class FITSViewer:
+    """Class to display a broswer for FITS files
+    """
     def __init__(self, fits_files):
-        """Class Constructor"""
+        """Class Constructor
+
+        Args:
+            fits_files : Viewer class initated with FITS file(s)
+        """
         self.fits_files = fits_files
         self.current_index = 0
         self.current_file = fits.open(self.fits_files[self.current_index])
@@ -30,10 +36,11 @@ class FITSViewer:
         self.prev_button.on_clicked(self.prev_image)
 
     def next_image(self, event):
-        """Function to display the next image
-        
-           Args:
-                event: A click event as input"""
+        """Function to go the next image
+
+        Args:
+            event : Click event
+        """
         if self.current_index < len(self.fits_files) - 1:
             self.current_index += 1
             self.current_file = fits.open(self.fits_files[self.current_index])
@@ -43,10 +50,11 @@ class FITSViewer:
             plt.draw()
 
     def prev_image(self, event):
-        """Function to display the previous image
-        
-           Args:
-                event: A click event as input"""
+        """Function to go the previous image
+
+        Args:
+            event : Click event
+        """
         if self.current_index > 0:
             self.current_index -= 1
             self.current_file = fits.open(self.fits_files[self.current_index])
@@ -56,11 +64,12 @@ class FITSViewer:
             plt.draw()
 
 def display_header_info(fits_files, attributes):
-    """Displays information from the file header
-       
-       Args:
-            fits_files - Single or multiple fits files
-            attributes - The attributes passed on from the commmand line via argparse"""
+    """Displays header info about the FITS file.
+
+    Args:
+        fits_files : Take a single or a list of FITS files as input
+        attributes : Command line attributes passed via argparse
+    """
     data = []
     for fits_file in fits_files:
         try:
@@ -97,19 +106,42 @@ def display_header_info(fits_files, attributes):
         print(tabulate(data, headers=headers, tablefmt="grid"))
         print("--------------------")
 
-if __name__ == "__main__":
+
+def add_argumnets_to_parser():
     parser = argparse.ArgumentParser(description="Display information from FITS header and view FITS images.")
     parser.add_argument("fits_files", nargs="+", help="Paths to the FITS files")
-    parser.add_argument("--date", action="store_true", help="Display date from FITS header")
-    parser.add_argument("--time", action="store_true", help="Display time from FITS header")
-    parser.add_argument("--latitude", action="store_true", help="Display latitude from FITS header")
-    parser.add_argument("--longitude", action="store_true", help="Display longitude from FITS header")
+    parser.add_argument("-d", "--date", action="store_true", help="Display date from FITS header")
+    parser.add_argument("-t", "--time", action="store_true", help="Display time from FITS header")
+    parser.add_argument("-l", "--latitude", action="store_true", help="Display latitude from FITS header")
+    parser.add_argument("-o", "--longitude", action="store_true", help="Display longitude from FITS header")
     parser.add_argument("--ra", action="store_true", help="Display RA from FITS header")
     parser.add_argument("--dec", action="store_true", help="Display DEC from FITS header")
     parser.add_argument("--exposure", action="store_true", help="Display exposure time from FITS header")
-    parser.add_argument("--viewer", action="store_true", help="Display FITS file images")
-    # Add more attributes as needed
+    parser.add_argument("-v", "--viewer", action="store_true", help="Display FITS file images")
+    args = parser.parse_args()
+    attributes = []
+    if args.date:
+        attributes.append("date")
+    if args.time:
+        attributes.append("time")
+    if args.latitude:
+        attributes.append("latitude")
+    if args.longitude:
+        attributes.append("longitude")
+    if args.ra:
+        attributes.append("ra")
+    if args.dec:
+        attributes.append("dec")
+    if args.exposure:
+        attributes.append("exposure")
 
+    return parser
+
+    attributes = []
+if __name__ == "__main__":
+
+
+    parser = add_argumnets_to_parser()
     args = parser.parse_args()
     attributes = []
     if args.date:
