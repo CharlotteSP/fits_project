@@ -9,3 +9,9 @@ setup(
     packages=find_packages()
 
 )
+
+entry_points={
+    "console_scripts": [
+        "cmdfits = cmdfits.cli:main",
+    ]
+}
