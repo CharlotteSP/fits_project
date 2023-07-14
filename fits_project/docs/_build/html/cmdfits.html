@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fits Command Line &mdash; Fits Package 2023 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Fits Package" href="fits.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Fits Package
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fits.html">Fits Package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fits Command Line</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cmdfits.FITSViewer"><code class="docutils literal notranslate"><span class="pre">FITSViewer</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cmdfits.FITSViewer.next_image"><code class="docutils literal notranslate"><span class="pre">FITSViewer.next_image()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cmdfits.FITSViewer.prev_image"><code class="docutils literal notranslate"><span class="pre">FITSViewer.prev_image()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#cmdfits.display_header_info"><code class="docutils literal notranslate"><span class="pre">display_header_info()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Fits Package</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Fits Command Line</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/cmdfits.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fits-command-line">
+<span id="cmdfits"></span><h1>Fits Command Line<a class="headerlink" href="#fits-command-line" title="Permalink to this heading"></a></h1>
+<p>Module to extract FITS info quickly from the command line</p>
+<span class="target" id="module-cmdfits"></span><p>A command line utlity to display various parameters of a FITS file
+and to browse through them.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="cmdfits.FITSViewer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cmdfits.</span></span><span class="sig-name descname"><span class="pre">FITSViewer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fits_files</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmdfits.FITSViewer" title="Permalink to this definition"></a></dt>
+<dd><p>Class to display a broswer for FITS files</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="cmdfits.FITSViewer.next_image">
+<span class="sig-name descname"><span class="pre">next_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmdfits.FITSViewer.next_image" title="Permalink to this definition"></a></dt>
+<dd><p>Function to go the next image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – Click event</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="cmdfits.FITSViewer.prev_image">
+<span class="sig-name descname"><span class="pre">prev_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmdfits.FITSViewer.prev_image" title="Permalink to this definition"></a></dt>
+<dd><p>Function to go the previous image</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – Click event</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="cmdfits.display_header_info">
+<span class="sig-prename descclassname"><span class="pre">cmdfits.</span></span><span class="sig-name descname"><span class="pre">display_header_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fits_files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmdfits.display_header_info" title="Permalink to this definition"></a></dt>
+<dd><p>Displays header info about the FITS file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fits_files</strong> – Take a single or a list of FITS files as input</p></li>
+<li><p><strong>attributes</strong> – Command line attributes passed via argparse</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fits.html" class="btn btn-neutral float-left" title="Fits Package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Charlotte Smith, Yash Bhatt, Zoe Wheelwright.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

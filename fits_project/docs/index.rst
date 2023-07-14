@@ -10,7 +10,9 @@ Welcome to Fits Package's documentation!
    :maxdepth: 2
    :caption: Contents:
    
+   intro.rst
    fits.rst
+   cmdfits.rst
 
 
 Indices and tables
